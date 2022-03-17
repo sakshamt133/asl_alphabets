@@ -8,6 +8,5 @@ img_size = 224
 batch_size = 32
 epochs = 2
 transform = transforms.Compose([
-    transforms.ToPILImage(),
     transforms.ToTensor()
 ])

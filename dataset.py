@@ -1,6 +1,7 @@
 from torch.utils.data import Dataset
 import os
 import cv2 as cv
+import numpy as np
 
 
 class Alphabets(Dataset):
@@ -22,6 +23,7 @@ class Alphabets(Dataset):
                 img = cv.imread(complete_path)
                 img = cv.resize(img, (200, 200))
                 img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+                img = np.asarray(img)
                 img = self.transform(img)
 
                 temp.append(img)
