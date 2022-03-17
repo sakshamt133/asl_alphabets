@@ -23,7 +23,7 @@ class Alphabets(Dataset):
                 img = cv.imread(complete_path)
                 img = cv.resize(img, (200, 200))
                 img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
-                img = np.asarray(img)
+                img = np.asarray(img, dtype = np.float64)
                 img = self.transform(img)
 
                 temp.append(img)
