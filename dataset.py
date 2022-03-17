@@ -14,7 +14,7 @@ class Alphabets(Dataset):
         self.make_data()
 
     def make_data(self):
-        for label in self.labels:
+        for i, label in enumerate(self.labels):
             for label_path in os.listdir(os.path.join(self.path, label)):
                 temp = []
                 small_path = os.path.join(self.path, label)
@@ -27,7 +27,7 @@ class Alphabets(Dataset):
                 img = self.transform(img)
 
                 temp.append(img)
-                temp.append(label)
+                temp.append(i)
                 self.data.append(temp)
 
     def __getitem__(self, item):
